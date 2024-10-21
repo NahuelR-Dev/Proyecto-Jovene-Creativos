@@ -1,0 +1,339 @@
+:root {
+    --FondoPrincipal: #121212;
+    --FondoSecundario: #1E1E1E;
+    --TextoPrincipal: #FFFFFF;
+    --TextosSecundarios: #B0B0B0;
+    --BotonesPrimarios: #FF3D00;
+    --BotonesSecundarios: #007BFF;
+    --Encabezado: #FFD700;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--FondoPrincipal);
+    font-family: 'Roboto', sans-serif;
+}
+
+/*Empiezop con el Header y los Links*/
+.contenedor {
+    width: 90%;
+    margin: auto;
+}
+
+header {
+    padding: 30px 0;
+}
+
+header .contenedor {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: "Lobster", sans-serif;
+    font-weight: normal;
+    color: var(--Encabezado);
+    font-size: 40px;
+}
+
+/* Css del menu navegacion*/
+
+nav a {
+    position: relative;
+    font-size: 1.1em;
+    color: var(--TextosSecundarios);
+    text-decoration: none;
+    padding: 6px 20px;
+    transition: .5s;
+    gap: 3rem;
+}
+
+nav a:hover {
+    color: var(--TextoPrincipal);
+}
+
+nav a span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    border-bottom: 2px solid var(--BotonesSecundarios);
+    border-radius: 30px;
+    transform: scale(0) translateY(50px);
+    transition: .5s;
+}
+
+nav a:hover span {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+}
+
+header nav a.activo {
+    color: white;
+    z-index: -1;
+    border-bottom: 2px solid var(--BotonesSecundarios);
+    border-radius: 30px;
+}
+
+
+/*Empiezo con el inicio de Secion y registro*/
+
+.containner {
+    position: relative; 
+    margin: 40px auto; 
+    width: 100%; 
+    max-width: 1100px; 
+    min-height: 550px; 
+    border-radius: 10px;
+    background: linear-gradient(rgb(30, 30, 30), rgba(255, 215, 0, 0.3));
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.8);
+}
+
+@media (max-width: 768px) {
+    .containner {
+        width: 95%; 
+        margin: 40px auto; 
+    }
+}
+
+
+
+.contenido {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 48%;
+    height: 100%;
+    padding: 80px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.logo-sesion {
+    font-size: 50px;
+    font-family: "Lobster", sans-serif;
+    font-weight: normal;
+}
+
+.texto-log {
+    font-size: 40px;
+    line-height: 1;
+    font-weight: normal;
+}
+
+.texto-log span {
+    font-size: 30px;
+    font-weight: normal;
+}
+
+.texto-log p {
+    font-size: 14px;
+    margin: 20px 0;
+}
+
+.caja-larga {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: calc(100% - 58%);
+    height: 100%;
+    overflow: hidden;
+    
+}
+
+
+/* CSS de los inputs del formulario*/
+
+.caja-form {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    color: white;
+}
+
+
+.inici {
+    transform: translateX(0);
+    transition: transform 1s ease;
+}
+
+.activate .inici {
+    transform: translateX(500px);
+    transition-delay: 0s;
+}
+
+.caja-larga .caja-form.register {
+    transform: translateX(500px);
+    transition: transform 1s ease;
+}
+
+.caja-larga.activate .caja-form.register {
+    transform: translateX(0);
+    transition-delay: .5s;
+}
+
+
+
+
+.caja-form h2 {
+    font-size: 27px;
+    text-align: center;
+}
+
+.input-caja {
+    position: relative;
+    width: 340px;
+    height: 50px;
+    border-bottom: 2px solid #e4e4e4;
+    margin: 20px 0;
+}
+
+.input-caja input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color: white;
+    font-weight: 500;
+    padding: 30px;
+}
+
+.input-caja label {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    font-size: 19px;
+    font-weight: 500;
+    pointer-events: none;
+}
+
+.input-caja input:focus~label,
+.input-caja input:valid~label {
+    top: -5px;
+    transition: 0.5s ease;
+}
+
+
+
+.icono {
+    position: absolute;
+    top: 13px;
+    right: 0;
+    font-size: 20px;
+}
+
+.sele {
+    border-radius: 4px;
+    margin-top: -3rem;
+    text-align: center;
+}
+
+.recordar {
+    font-size: 14.5px;
+    font-weight: 500;
+    margin: -15px 0 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.recordar label input {
+    accent-color: #e4e4e4;
+    margin-right: 3px;
+}
+
+.recordar label {
+    gap: 3rem;
+}
+
+.recordar {
+    color: white;
+    text-decoration: none;
+}
+
+.recordar a:hover {
+    text-decoration: underline;
+}
+
+.btn {
+    width: 100%;
+    height: 45px;
+    background: var(--BotonesPrimarios);
+    border: none;
+    outline: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 16px;
+    color: white;
+    font-weight: 500;
+    box-shadow: 0 0 10px rgb(0, 0, 0, .5);
+}
+
+.Registrar {
+    font-size: 14.5px;
+    font-weight: 500;
+    text-align: center;
+    margin-top: 25px;
+}
+
+.Registrar p,
+a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.Registrar a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 430px) {
+    .contenido {
+        display: none; 
+    }
+
+    .containner {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 90%; 
+        max-width: 400px; 
+        margin: 20px auto; 
+        
+    }
+
+    .caja-larga {
+        position: relative;
+        width: 100%; 
+        min-height: 480px; 
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+    }
+
+    .btn {
+        height: 30px; 
+        font-size: 14px; 
+    }
+}
+
+
+
+
